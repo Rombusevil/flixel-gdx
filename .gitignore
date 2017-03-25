@@ -16,3 +16,5 @@ war/
 *.zip
 
 Thumbs.db
+
+!utils/projects.zip
