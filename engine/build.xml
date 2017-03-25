@@ -49,9 +49,11 @@
 		</antcall>
 		
 		<!-- Compile the gwt version -->
+		<!--
 		<antcall target="compile-other">
 			<param name="project" value="html5"/>
 		</antcall>
+		-->
         
 		<!-- Generate javadoc -->
 		<antcall target="generate-doc" />

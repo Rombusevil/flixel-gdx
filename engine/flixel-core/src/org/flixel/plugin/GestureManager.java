@@ -316,4 +316,11 @@ public class GestureManager extends FlxBasic implements GestureListener
 			pointer2 = null;
 		}
 	}
+
+	
+	@Override
+	public void pinchStop() {
+		// TODO Auto-generated method stub
+		
+	}
 }

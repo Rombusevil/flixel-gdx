@@ -1,47 +1,44 @@
-![logo](http://s6.postimg.org/51ixndytt/flixel_gdx_banner.png)
+# Flixel-gdx Fork (name pending)
 
-###What is flixel-gdx?
-flixel-gdx is an open source 2D game engine written in Java. Flixel-gdx is a port of AS3 [flixel](http://flixel.org) written by [Adam ‘Atomic’ Saltsman](http://adamatomic.com/) to the Java language. It is built on top of the powerful [libgdx](http://libgdx.badlogicgames.com/) framework which allows developers to build and distribute cross-platform games. The complex stuff like OpenGL ES is taken care by libgdx and flixel-gdx makes you creating games easy and fun.
+Fork of [flixel-gdx](http://flixel-gdx.com 'flixel-gdx homepage') with tweaks for it's use at Rombosaur Studios.
 
-###Build status
-![Build Status](http://jenkins.flixel-gdx.com:8180/job/flixel-gdx/badge/icon)
+## Changes
 
-###Links
--	[flixel-gdx.com](http://flixel-gdx.com 'flixel-gdx homepage')
--	[@flixelgdx on Twitter](http://twitter.com/flixelgdx)
--	[Wiki](https://github.com/flixel-gdx/flixel-gdx/wiki)
--	[Demos](https://github.com/flixel-gdx/flixel-gdx-examples)
--	[Project Setup](https://github.com/flixel-gdx/flixel-gdx/wiki/Project-Setup)
--	[Quick Guide](https://github.com/flixel-gdx/flixel-gdx/wiki/Quick-Guide)
+- Libgdx updated to 1.9.4. Flixel-gdx updated accordingly (not thoroughly tested, and with some todo's)
 
-###Cross platform
-<table>
-    <tr>
-    	<th>Desktop</th>
-    	<th>Mobile</th>
-        <th>Web</th>
-    </tr>
-    <tr>
-    	<td>Linux</td>
-        <td>Android</td>
-        <td>WebGL browsers</td>
-    </tr>
-    <tr>
-    	<td>Mac</td>
-        <td>iOS (beta)</td>
-        <td></td>
-    </tr>
-    <tr>
-    	<td>Windows</td>
-        <td></td>
-        <td></td>
-    </tr>
-</table>
+- IntelliJ IDE integration
 
-###Forums
-flixel-gdx doesn't have its own message board, but you can use the forums of flixel and libgdx. Both have an active community. If you have any questions or feedback that are related to flixel please put it in the flixel community. They are more likely to help you out more quickly than at the libgdx. Questions about Android, OpenGL ES, rendering, etc. goes to libgdx.
+- Project generation script
 
-[flixel forums](http://forums.flixel.org) | [libgdx forums](http://www.badlogicgames.com/forum)
+- Personal tweaks
 
-###License
-flixel-gdx is distributed under the New BSD License, meaning you can use it free of charge, without strings attached in commercial and non-commercial projects. We love to get (non-mandatory) credit in case you release a game or app using flixel-gdx!
+- Fixed wiki markdown
+
+## Project generation script
+
+_The cheapest gdx-setup-ui ever!_
+
+![gdx-setup-ui](img/gdx-setup-ui.png)
+
+It's a bash script so **Linux only**. It also depends on _zenity_.   
+Run it with the following command:
+
+```bash
+    ./gdx-setup-ui.sh
+```
+
+fill in all the form inputs, and hit the _Ok_ button.
+
+----
+
+If you don't want to install _zenity_ you can run the following command:
+
+```bash
+    ./gen-project.sh [package_name] [game_name] [output_folder]
+```
+
+The output will be ugly, as it's supposed to be piped to zenity, but it'll work.
+
+----
+
+For the rest, treat the project as a gradle based Libgdx project (open the build.gradle from intellij as project and etc...).

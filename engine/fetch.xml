@@ -1,9 +1,10 @@
 <!-- Call this to fetch all the required libraries from the server -->
 <project name="fetch-libraries" default="all">
 	<property name="domain" value="http://flixel-gdx.com/dist"/>
+	<property name="libgdxDomain" value="https://libgdx.badlogicgames.com/nightlies/"/>
 	<target name="fetch">
 		<!-- download archives -->
-		<get src="${domain}/libgdx-nightly.zip" dest="libgdx-nightly.zip" usetimestamp="true"/>
+		<get src="${libgdxDomain}/libgdx-nightly-latest.zip" dest="libgdx-nightly.zip" usetimestamp="true"/>
 		<get src="${domain}/tween-engine.zip" dest="tween-engine.zip" usetimestamp="true"/>
 
 	</target>

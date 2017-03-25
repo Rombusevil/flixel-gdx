@@ -18,12 +18,10 @@ public class FullscreenManager extends FlxBasic
 	
 	private boolean inFullscreen = false;
 	private boolean useDesktopDisplayMode = false;
-	private int fullscreenWidth, fullscreenHeight, windowedWidth, windowedHeight;
+	private int windowedWidth, windowedHeight;
 	
 	public FullscreenManager(int FullscreenWidth, int FullscreenHeight, int WindowedWidth, int WindowedHeight, String Hotkey)
 	{
-		fullscreenWidth = FullscreenWidth;
-		fullscreenHeight = FullscreenHeight;
 		windowedWidth = WindowedWidth;
 		windowedHeight = WindowedHeight;
 		hotkey = Hotkey;
@@ -60,14 +58,13 @@ public class FullscreenManager extends FlxBasic
 	public void toggle()
 	{
 		if(inFullscreen)
-			Gdx.graphics.setDisplayMode(windowedWidth, windowedHeight, false);
+			Gdx.graphics.setWindowedMode(windowedWidth, windowedHeight);
 		else if(useDesktopDisplayMode)
 		{
-			DisplayMode desktopDisplayMode = Gdx.graphics.getDesktopDisplayMode();
-			Gdx.graphics.setDisplayMode(desktopDisplayMode.width, desktopDisplayMode.height, true);
+			DisplayMode desktopDisplayMode = Gdx.graphics.getDisplayMode();
+			Gdx.graphics.setFullscreenMode(desktopDisplayMode);
 		}
-		else
-			Gdx.graphics.setDisplayMode(fullscreenWidth, fullscreenHeight, true);
+		
 		inFullscreen = !inFullscreen;
 	}
 	
