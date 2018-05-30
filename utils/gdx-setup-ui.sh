@@ -16,6 +16,9 @@ if [[ $OK == 0 ]]; then
     PACKAGE=$(echo $CONFIG | awk -F "|" '{print $1}')
     NAME=$(echo $CONFIG | awk -F "|" '{print $2}')
     OUTPUT=$(echo $CONFIG | awk -F "|" '{print $3}')
+    
+    # Replace spaces with underscores
+    NAME=${NAME// /_}
 
     # Validate searching for empty fields
     if [[ ! $PACKAGE =~ [^[:space:]] || ! $NAME =~ [^[:space:]] || ! $OUTPUT =~ [^[:space:]] ]]; then
